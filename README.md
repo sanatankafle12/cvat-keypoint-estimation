@@ -113,7 +113,7 @@ At Step 7, we run our desired model which is kept at serverless/pytorch/ultralyt
     localhost:8080
 which will prompt you to authenticate yourself that you add when creating the superuser
 
-### **To use your Model **
+### **To use your Model**
 1. Create a project where you can chose the model name, and other features
 2. In labels, you can add ```from model``` which will give you option to chose from your model and can pick from there
 3. Create a new task under the project name
