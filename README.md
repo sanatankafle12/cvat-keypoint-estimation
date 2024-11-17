@@ -2,7 +2,7 @@
 
 ## Custom CVAT with Pose Estimation
 
-This repository is a modified version of the CVAT tool, adapted to run a custom pose estimation model.
+This repository is a modified version of the  [CVAT](https://github.com/cvat-ai/cvat) , adapted to run a custom pose estimation model.
 Modifications
 
 This version includes:
@@ -105,3 +105,17 @@ CVAT with Serverless Machine Learning Models
     - --platform local: Specifies that the function will run locally.
 
 *Outcome*: The YOLOv8 function is deployed and ready to process data for keypoint detection.
+
+## Deploying and Checking Model:
+
+At Step 7, we run our desired model which is kept at serverless/pytorch/ultralytics/yolov8-fish-kp folder. After deploying the model run 
+
+    localhost:8080
+which will prompt you to authenticate yourself that you add when creating the superuser
+
+### **To use your Model **
+1. Create a project where you can chose the model name, and other features
+2. In labels, you can add ```from model``` which will give you option to chose from your model and can pick from there
+3. Create a new task under the project name
+4. Select the AI button in the navigation inside the job
+5. use your model, annotate and export it as you require.
