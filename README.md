@@ -25,7 +25,7 @@ CVAT with Serverless Machine Learning Models
        -  up -d: Starts the defined services in detached mode, allowing them to run in the background.
     *Outcome*: Both CVAT and its serverless infrastructure are deployed and running as Docker containers.
 
-###**2. Download the Nuclio CLI (nuctl)**
+### **2. Download the Nuclio CLI (nuctl)**
 
 ```wget https://github.com/nuclio/nuclio/releases/download/1.13.0/nuctl-1.13.0-linux-amd64```
     *Purpose*: Downloads the Nuclio command-line interface (CLI), used for managing serverless functions.
