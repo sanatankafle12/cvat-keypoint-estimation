@@ -6,7 +6,6 @@ This repository is a modified version of the CVAT tool, adapted to run a custom 
 Modifications
 
 This version includes:
-
     A custom pose estimation model integrated for specific annotation tasks.
 
 ## License
@@ -23,9 +22,9 @@ CVAT with Serverless Machine Learning Models
 
 *Details*:
     
-       -  -f docker-compose.yml: Specifies the primary Docker Compose file for the base CVAT setup.
-       -  -f components/serverless/docker-compose.serverless.yml: Adds additional configurations to enable serverless functionality in CVAT.
-       -  up -d: Starts the defined services in detached mode, allowing them to run in the background.
+   -  -f docker-compose.yml: Specifies the primary Docker Compose file for the base CVAT setup.
+   -  -f components/serverless/docker-compose.serverless.yml: Adds additional configurations to enable serverless functionality in CVAT.
+   -  up -d: Starts the defined services in detached mode, allowing them to run in the background.
        
 *Outcome*: Both CVAT and its serverless infrastructure are deployed and running as Docker containers.
 
@@ -36,9 +35,8 @@ CVAT with Serverless Machine Learning Models
 *Purpose*: Downloads the Nuclio command-line interface (CLI), used for managing serverless functions.
     
 *Details*:
-    
-        - wget: Downloads files from the specified URL.
-        - The URL points to the 1.13.0 release of the Nuclio CLI binary for Linux systems.
+    - wget: Downloads files from the specified URL.
+    - The URL points to the 1.13.0 release of the Nuclio CLI binary for Linux systems.
         
 *Outcome*: The nuctl CLI binary is saved to the current directory.
 
@@ -49,10 +47,9 @@ CVAT with Serverless Machine Learning Models
 *Purpose*: Adds executable permissions to the downloaded nuctl binary.
     
 *Details*:
-
-        - sudo: Runs the command with administrator privileges to modify file permissions.
-        - chmod +x: Adds the executable permission to the file.
-        
+    - sudo: Runs the command with administrator privileges to modify file permissions.
+    - chmod +x: Adds the executable permission to the file.
+            
 *Outcome*: The nuctl binary can now be executed from the command line.
 
 ### **4. Add nuctl to the System Path**
@@ -62,10 +59,9 @@ CVAT with Serverless Machine Learning Models
 *Purpose*: Creates a symbolic link to the nuctl binary, making it accessible from anywhere on the system.
     
 *Details*:
-    
-        - ln -sf: Creates or updates a symbolic link (-s for symbolic and -f to force replacement).
-        - $(pwd): Expands to the current working directory where the nuctl binary is located.
-        - /usr/local/bin/nuctl: Adds the link to the system’s executable search path.
+    - ln -sf: Creates or updates a symbolic link (-s for symbolic and -f to force replacement).
+    - $(pwd): Expands to the current working directory where the nuctl binary is located.
+    - /usr/local/bin/nuctl: Adds the link to the system’s executable search path.
         
 *Outcome*: The nuctl CLI can now be run from any location in the terminal.
 
@@ -76,8 +72,7 @@ CVAT with Serverless Machine Learning Models
 *Purpose*: Initializes a new Nuclio project named cvat.
     
 *Details*:
-    
-        - Projects in Nuclio serve as logical containers for related serverless functions, making it easier to organize and manage them.
+    - Projects in Nuclio serve as logical containers for related serverless functions, making it easier to organize and manage them.
         
 *Outcome*: A project named cvat is created in Nuclio.
 
@@ -88,7 +83,6 @@ CVAT with Serverless Machine Learning Models
 *Purpose*: Sets up a superuser account for the CVAT web interface, enabling administrative access.
 
 *Details*:
-
     - docker exec -it: Runs a command interactively inside a running Docker container.
     - cvat_server: Specifies the container name where the command will execute.
     - python3 ~/manage.py createsuperuser: Invokes Django’s built-in management command to create a superuser account. It will prompt you to input details such as a username, email, and password.
@@ -104,7 +98,6 @@ CVAT with Serverless Machine Learning Models
 *Purpose*: Deploys the YOLOv8 keypoints detection function as a serverless component under the cvat project.
 
 *Details*:
-
     - sudo nuctl deploy: Deploys a serverless function to Nuclio.
     - --project-name cvat: Associates the function with the previously created cvat project.
     - --path: Specifies the directory containing the function's configuration, code, and dependencies.
