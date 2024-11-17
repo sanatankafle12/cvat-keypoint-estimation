@@ -13,13 +13,18 @@ The original CVAT code is licensed under the MIT License.
 ## CVAT with Serverless Machine Learning Models
 
 The steps to deploy CVAT using nuclio and run model in CVAT is as given below:
+
 **1. Docker Compose to Set Up CVAT**
+
    ```docker compose -f docker-compose.yml -f components/serverless/docker-compose.serverless.yml up -d```
+   
    Purpose: Initializes the CVAT application along with its serverless components.
+   
    Details:
     -f docker-compose.yml: Specifies the primary Docker Compose file for the base CVAT setup.
     -f components/serverless/docker-compose.serverless.yml: Adds additional configurations to enable serverless functionality in CVAT.
     up -d: Starts the defined services in detached mode, allowing them to run in the background.
+    
    Outcome: Both CVAT and its serverless infrastructure are deployed and running as Docker containers.
 
 2. Download the Nuclio CLI (nuctl)
